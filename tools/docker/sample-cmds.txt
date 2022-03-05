@@ -1,0 +1,14 @@
+Sample commands:
+
+Run IOC:
+	iocsh.bash cmds/sgp.cmd
+Query IOC instances:
+	pvlist -i
+Query IOC variables:
+	pvlist <guid>
+Query PV value:
+	pvget <pv>
+Set PV value:
+	pvput <pv> <val>
+Monitor PV changes:
+	pvmonitor <pv>

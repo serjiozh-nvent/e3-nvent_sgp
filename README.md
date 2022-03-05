@@ -20,6 +20,7 @@ II. DIRECTORY LAYOUT
  * `sgp_snmpv3.iocsh`	- IOC shell script to configure SGP SNMPv3 access
 * `nvent_sgp/`	- placeholder for nvent_sgp module
 * `patch/`		- patches for nvent_sgp module
+* `tools/`		- various tools and scripts
 * `Makefile`	- main build script
 * `README.md`	- this file
 * `nvent_sgp.Makefile`	- subordinate build script for building nvent_sgp module
