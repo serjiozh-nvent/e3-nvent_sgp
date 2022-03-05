@@ -1,0 +1,32 @@
+# ### SGP (SNMP v2) configuration ###
+#- ###################################################
+#- HOST             - SNMP HOSTNAME for communications
+#-                    Mandatory
+#-
+#- PREFIX           - Record name prefix
+#-                    Default: "SGP:"
+#-
+#- USER_R           - Community string for read access
+#-                    Default: "public"
+#-
+#- USER_R           - Community string for write access
+#-                    Default: "private"
+#-
+#- MAX_OIDS         - Optional:  maximum number of OID for nVent SGP.
+#-                    Default: 12
+#- ###################################################
+
+epicsEnvSet("PREFIX", "$(IOC=SGP):")
+epicsEnvSet("USER_R", "$(USER_R=public)")
+epicsEnvSet("USER_W", "$(USER_W=private)")
+epicsEnvSet("MIBS",   "+$(nvent_sgp_DIR)SGP-MIB.txt")
+
+devSnmpSetParam(SetSkipReadbackMSec, 6000)
+devSnmpSetParam(PassivePollMSec, 120000)
+devSnmpSetParam(DataStaleTimeoutMSec, 120000)
+devSnmpSetParam(SessionRetries, 1)
+devSnmpSetSnmpVersion("$(HOST)", $(SNMP_VER=SNMP_VERSION_3))
+devSnmpSetSnmpV3ConfigFile("$(HOST)", "$(SNMP_V3_CONFIG)")
+devSnmpSetMaxOidsPerReq("$(HOST)", $(MAXOIDS=12))
+
+dbLoadRecords("sgp.db",  "PREFIX=$(PREFIX), USER_R=$(USER_R), USER_W=$(USER_R), HOST=$(HOST)")

@@ -1,0 +1,3 @@
+[submodule "nvent_sgp"]
+	path = nvent_sgp
+	url = https://github.com/serjiozh-nvent/nvent_sgp.git
