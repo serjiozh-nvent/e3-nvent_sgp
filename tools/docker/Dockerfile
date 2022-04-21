@@ -6,6 +6,10 @@ ARG FTP_PROXY
 ENV http_proxy=$HTTP_PROXY
 ENV ftp_proxy=$FTP_PROXY
 
+RUN cd /etc/yum.repos.d && sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
+        sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* && \
+        yum update -y
+
 # instal EN_US.UTF8 locale
 RUN dnf install -y glibc-langpack-en
 
