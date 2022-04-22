@@ -70,7 +70,7 @@ RUN rm -rf tclx
 USER ${USER}
 
 # clone ESS EPICS Environment
-RUN git clone https://gitlab.esss.lu.se/e3/e3.git
+RUN git clone https://gitlab.esss.lu.se/e3/e3.git && cd e3 && git checkout f763f102fa8d900ef662c682ad11a881d6ffb15c
 RUN cd e3 && ./e3_building_config.bash -y -t /epics -b 7.0.5 -r 3.4.0 setup
 
 # build base and require
