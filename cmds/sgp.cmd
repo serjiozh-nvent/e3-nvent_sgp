@@ -1,5 +1,5 @@
 require snmp,1.1.0-1.1.0.3+0
-require nvent_sgp,1.0.0
+require nvent_sgp,1.0.1
 require iocstats
 
 epicsEnvSet("TOP",    "$(E3_CMD_TOP)")
