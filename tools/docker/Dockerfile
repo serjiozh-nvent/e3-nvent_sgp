@@ -161,6 +161,8 @@ COPY --chown=1000:1000 sample-cmds.txt /home/${USERNAME}
 RUN echo . /epics/base-7.0.6.1/require/4.0.0/bin/setE3Env.bash >> .bashrc
 RUN echo "cat ~/sample-cmds.txt" >> .bashrc
 
+ARG CACHEBUST=1
+
 # clone e3-nvent_sgp module
 RUN git clone https://github.com/serjiozh-nvent/e3-nvent_sgp.git
 
