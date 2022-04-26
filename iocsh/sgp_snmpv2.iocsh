@@ -28,4 +28,4 @@ devSnmpSetParam(SessionRetries, 1)
 devSnmpSetSnmpVersion("$(HOST)", SNMP_VERSION_2c)
 devSnmpSetMaxOidsPerReq("$(HOST)", $(MAXOIDS=12))
 
-dbLoadRecords("sgp.db",  "PREFIX=$(PREFIX), USER_R=$(USER_R), USER_W=$(USER_R), HOST=$(HOST)")
+dbLoadRecords("sgp.db",  "PREFIX=$(PREFIX), USER_R=$(USER_R), USER_W=$(USER_W), HOST=$(HOST)")

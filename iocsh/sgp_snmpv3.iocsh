@@ -29,4 +29,4 @@ devSnmpSetSnmpVersion("$(HOST)", $(SNMP_VER=SNMP_VERSION_3))
 devSnmpSetSnmpV3ConfigFile("$(HOST)", "$(SNMP_V3_CONFIG)")
 devSnmpSetMaxOidsPerReq("$(HOST)", $(MAXOIDS=12))
 
-dbLoadRecords("sgp.db",  "PREFIX=$(PREFIX), USER_R=$(USER_R), USER_W=$(USER_R), HOST=$(HOST)")
+dbLoadRecords("sgp.db",  "PREFIX=$(PREFIX), USER_R=$(USER_R), USER_W=$(USER_W), HOST=$(HOST)")
