@@ -16,7 +16,7 @@
 #-                    Default: 12
 #- ###################################################
 
-epicsEnvSet("PREFIX", "$(IOC=SGP)")
+epicsEnvSet("PREFIX", "$(IOC=SGP):")
 epicsEnvSet("USER_R", "$(USER_R=public)")
 epicsEnvSet("USER_W", "$(USER_W=private)")
 epicsEnvSet("MIBS",   "+$(nvent_sgp_DIR)SGP-MIB.txt")
